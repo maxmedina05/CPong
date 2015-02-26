@@ -1,8 +1,11 @@
+#include "Vector2D.h"
+
 #pragma once
 class Paddle
 {
 private:
 	int _length;
+	Vector2D _position;
 
 public:
 	Paddle();
@@ -10,5 +13,7 @@ public:
 	~Paddle();
 
 	int getLength() { return _length; }
+	void setPosition(Vector2D position);
+	Vector2D getPosition();
 };
 

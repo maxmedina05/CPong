@@ -17,5 +17,8 @@ public:
 	Vector2D getDirection();
 	void setPosition(Vector2D position);
 	Vector2D getPosition();
+
+	void updateBall();
+	void resetBall();
 };
 

@@ -3,6 +3,7 @@
 
 Ball::Ball()
 {
+	resetBall();
 }
 
 
@@ -30,4 +31,14 @@ void Ball::setPosition(Vector2D position){
 
 Vector2D Ball::getPosition(){
 	return _position;
+}
+
+void Ball::updateBall(){
+
+}
+
+void Ball::resetBall(){
+	_position = Vector2D(25, 15);
+	_direction = Vector2D(-1, 0);
+	_speed = 1;
 }
