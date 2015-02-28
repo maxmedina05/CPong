@@ -10,12 +10,16 @@ ConsoleHandler::~ConsoleHandler()
 {
 }
 
-void ConsoleHandler::DrawGameScene(){}
+void ConsoleHandler::DrawGameScene(){
+
+}
 
 void ConsoleHandler::DrawPaddle(Paddle paddle){
 
 	for (int i = 0; i < paddle.getLength(); i++){
-		gotoXY(paddle.getPosition());
+		Vector2D pos = paddle.getPosition();
+		pos.setY(pos.getY() + i);
+		gotoXY(pos);
 		cout << "#";
 	}
 }
@@ -34,7 +38,12 @@ void ConsoleHandler::gotoXY(Vector2D position){
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD pos;
-	pos.X = position.getX();
-	pos.Y = position.getY();
+	pos.X = (int)position.getX();
+	pos.Y = (int)position.getY();
 	SetConsoleCursorPosition(handle, pos);
+}
+
+void ConsoleHandler::DrawCText(Vector2D position, string Text){
+	gotoXY(position);
+	cout << Text;
 }

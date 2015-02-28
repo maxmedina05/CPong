@@ -22,5 +22,10 @@ public:
 
 	void setPaddle(Paddle paddle){ _paddle = paddle; }
 	Paddle getPaddle(){ return _paddle; }
+
+	void MoveUp();
+	void MoveDown();
+
+	void AddPoint();
 };
 

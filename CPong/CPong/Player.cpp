@@ -24,3 +24,14 @@ void Player::setScore(int score){
 int Player::getScore(){
 	return _score;
 }
+
+void Player::MoveUp(){
+	_paddle.MoveUp();
+}
+void Player::MoveDown(){
+	_paddle.MoveDown();
+}
+
+void Player::AddPoint(){
+	_score++;
+}

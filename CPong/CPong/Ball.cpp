@@ -11,11 +11,11 @@ Ball::~Ball()
 {
 }
 
-void Ball::setSpeed(int speed){
+void Ball::setSpeed(float speed){
 	_speed = speed;
 }
 
-int Ball::getSpeed(){
+float Ball::getSpeed(){
 	return _speed;
 }
 
@@ -34,7 +34,7 @@ Vector2D Ball::getPosition(){
 }
 
 void Ball::updateBall(){
-
+	_position = Vector2D((int) (_position.getX() + _direction.getX()*_speed), (int)(_position.getY() + _direction.getY()*_speed));
 }
 
 void Ball::resetBall(){
